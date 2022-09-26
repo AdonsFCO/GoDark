@@ -6,7 +6,7 @@ import "./App.css"
 const App = () => {
   return (
     <>
-      <Board size={9} />
+      <Board size={19} />
       <Stone color="white" />
       <Stone color="black" />
     </>
