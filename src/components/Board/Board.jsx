@@ -1,4 +1,6 @@
-const Board = ({ size }) => {
+import Stone from "../Stone/Stone";
+
+const Board = ({ size, postionSystem }) => {
   //The size of the board will be multipled by itself for example if you use 9 the board will be 9x9 or if its
   // 19 will be 19x19
   const definition = {
@@ -8,21 +10,26 @@ const Board = ({ size }) => {
     gridTemplateRows: `repeat(${size},31px)`,
     gap: 0,
     width: "1000px",
-   
   };
   const boxStyle = {
     border: "solid 2px black",
     width: "30px",
     height: "30px",
-    
   };
   return (
     <div id="board" style={definition}>
-      {[...Array(size * size)].map((box,i) => {
-        return <div style={boxStyle} key={i}>
+      {
+        /* {[...Array(size * size)].map((box, i) => {
+        return <div style={boxStyle} key={i}></div>;
+      })} */
+        postionSystem.map((box, i) => {
+          if (box[i] === true) {
+            return <div style={boxStyle} key={i}></div>;
+          }
 
-        </div>;
-      })}
+          return <div style={boxStyle} key={i}></div>;
+        })
+      }
     </div>
   );
 };
