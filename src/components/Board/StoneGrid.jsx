@@ -1,5 +1,5 @@
 //This is the position system of the board.
-
+//Obsolete a BAD IDEA
 const StoneGrid = ({size}) =>
 {
 
